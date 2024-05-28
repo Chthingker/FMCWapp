@@ -25,9 +25,11 @@ for data in GetFile(selected_file_num,'HR'):
     ls.append(data.detach().numpy())
 ls=np.array(ls)
 
+print(ls.shape)
+
 
 fig = ff.create_distplot(
-    ls
+    ls,['心率'],bin_size=[1,.25,.5]
 )
 
 st.plotly_chart(fig,use_container_width=True)
