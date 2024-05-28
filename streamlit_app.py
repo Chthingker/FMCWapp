@@ -16,4 +16,4 @@ option = st.selectbox(
 # st.write("You selected:", option)  option返回选择的数
 selected_file_num = int(option) 
 
-st.write(option.type)
+st.write(option)
