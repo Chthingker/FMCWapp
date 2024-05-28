@@ -1,4 +1,2 @@
--main file
-requirements.txt
 torch
 torchvision
