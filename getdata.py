@@ -22,7 +22,7 @@ def get_data(x:int,s:str): #选定第几个数据进行 分为三段：每段60 
     heart_phase = torch.unsqueeze(heart_phase,dim=1)
     l=x*60 #确定索引：
     r=60+l
-    if str=='HR':
+    if s=='HR':
         return heart_phase[l:r]
     else :
         return breath_phase[l:r]

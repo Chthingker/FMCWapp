@@ -24,15 +24,14 @@ ls=[]
 for data in GetFile(selected_file_num,'HR'):
     ls.append(data.detach().numpy())
 ls=np.array(ls).reshape(-1)
-
-
 ls2=[]
 for data in GetFile(selected_file_num,'BR'):
     ls2.append(data.detach().numpy())
 ls2=np.array(ls2).reshape(-1)
-
 x=[ls,ls2]
 labels=['心率','呼吸']
+
+
 
 fig = ff.create_distplot(
     x,labels
