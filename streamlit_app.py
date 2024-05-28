@@ -4,6 +4,7 @@ from peocess import *
 import numpy as np
 import plotly.figure_factory as ff
 import pandas as pd
+import time
 
 st.title(
     """
@@ -21,6 +22,8 @@ option = st.selectbox(
 # st.write("You selected:", option)  option返回选择的数
 selected_file_num = int(option) 
 
+
+start = time.perf_counter()
 ls=[]
 for data in GetFile(selected_file_num,'HR'):
     ls.append(data.detach().numpy())
@@ -30,15 +33,20 @@ for data in GetFile(selected_file_num,'BR'):
     ls2.append(data.detach().numpy())
 ls2=np.array(ls2)
 x=[ls,ls2]
+
+end = time.perf_counter()
+print(end-start)
+
+
 labels=['心率','呼吸']
 
 
 
-fig = ff.create_distplot(
-    x,labels
-)
+# fig = ff.create_distplot(
+#     x,labels
+# )
 
-st.plotly_chart(fig,use_container_width=True)
+# st.plotly_chart(fig,use_container_width=True)
 
 # st.write(option)
 
