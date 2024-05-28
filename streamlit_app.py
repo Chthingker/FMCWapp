@@ -32,13 +32,13 @@ ls2=[]
 for data in GetFile(selected_file_num,'BR'):
     ls2.append(data.detach().numpy())
 ls2=np.array(ls2)
-x=[ls,ls2]
+x=[ls,]
 
 end = time.perf_counter()
 print(end-start)
 
 
-labels=['心率','呼吸']
+labels=['心率',]
 
 
 
