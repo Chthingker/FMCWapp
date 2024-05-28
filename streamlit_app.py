@@ -23,14 +23,19 @@ selected_file_num = int(option)
 ls=[]
 for data in GetFile(selected_file_num,'HR'):
     ls.append(data.detach().numpy())
-ls=np.array(ls)
-ls = ls.reshape(60)
+ls=np.array(ls).reshape(-1)
 
-# print (ls)
 
+ls2=[]
+for data in GetFile(selected_file_num,'BR'):
+    ls2.append(data.detach().numpy())
+ls2=np.array(ls2).reshape(-1)
+
+x=[ls,ls2]
+labels=['心率','呼吸']
 
 fig = ff.create_distplot(
-    [ls,],['心率',],bin_size=[1,.25,.5]
+    x,labels
 )
 
 st.plotly_chart(fig,use_container_width=True)
