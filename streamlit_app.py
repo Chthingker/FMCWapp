@@ -1,5 +1,8 @@
 import streamlit as st
 import torch
+from peocess import *
+import numpy as np
+
 st.write(
     """
     # welcome **world!**
@@ -16,4 +19,12 @@ option = st.selectbox(
 # st.write("You selected:", option)  option返回选择的数
 selected_file_num = int(option) 
 
-st.write(option)
+ls=[]
+for data in GetFile(selected_file_num,'HR'):
+    ls.append(data.detach().numpy())
+ls=np.array(ls)
+
+
+# st.write(option)
+
+
