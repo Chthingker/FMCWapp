@@ -3,10 +3,11 @@ import torch
 from peocess import *
 import numpy as np
 import plotly.figure_factory as ff
+import pandas as pd
 
-st.write(
+st.title(
     """
-    # welcome **world!**
+    # 欢迎来到FMCW app
     """
 )
 
@@ -23,11 +24,11 @@ selected_file_num = int(option)
 ls=[]
 for data in GetFile(selected_file_num,'HR'):
     ls.append(data.detach().numpy())
-ls=np.array(ls).reshape(-1)
+ls=np.array(ls)
 ls2=[]
 for data in GetFile(selected_file_num,'BR'):
     ls2.append(data.detach().numpy())
-ls2=np.array(ls2).reshape(-1)
+ls2=np.array(ls2)
 x=[ls,ls2]
 labels=['心率','呼吸']
 
@@ -42,3 +43,5 @@ st.plotly_chart(fig,use_container_width=True)
 # st.write(option)
 
 
+chart_data = pd.DataFrame(np.array(x).T,columns=labels)
+st.area_chart(chart_data)
