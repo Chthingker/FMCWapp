@@ -24,7 +24,6 @@ def analysis(model:str , data): #data 是单条数据 本函数必须返回分�
 def GetFile(x:int,s:str):
     data = get_data(x,str)
     for i in range(60):
-        
         X = torch.unsqueeze(data[i],dim=1).to(torch.float32)
         # print(analysis('HR',X)) #([1, 12, 1200])
         # print(data[i].shape)
