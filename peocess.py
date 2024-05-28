@@ -23,7 +23,7 @@ def analysis(model:str , data): #data 是单条数据 本函数必须返回分�
 
 def GetFile(x:int,s:str):
     data = get_data(x,s)
-    for i in range(60):
+    for i in range(len(data)):
         X = torch.unsqueeze(data[i],dim=1).to(torch.float32)
         yield analysis(s,X).squeeze()
 

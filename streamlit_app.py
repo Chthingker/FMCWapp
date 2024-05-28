@@ -8,7 +8,7 @@ import time
 
 st.title(
     """
-    # 欢迎来到FMCW app
+    欢迎来到FMCW app
     """
 )
 
@@ -27,18 +27,18 @@ start = time.perf_counter()
 ls=[]
 for data in GetFile(selected_file_num,'HR'):
     ls.append(data.detach().numpy())
-ls=np.array(ls)
+ls=np.array(ls)-50
 ls2=[]
 for data in GetFile(selected_file_num,'BR'):
     ls2.append(data.detach().numpy())
 ls2=np.array(ls2)
-x=[ls,]
+x=[ls,ls2]
 
 end = time.perf_counter()
 print(end-start)
 
 
-labels=['心率',]
+labels=['心率','呼吸']
 
 
 

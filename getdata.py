@@ -23,9 +23,9 @@ def get_data(x:int,s:str): #选定第几个数据进行 分为三段：每段60 
     l=x*60 #确定索引：
     r=60+l
     if s=='HR':
-        return heart_phase[l:r]
+        return heart_phase[l:r:6] #每隔六步一个
     else :
-        return breath_phase[l:r]
+        return breath_phase[l:r:6]
 
 # data = get_data(0,'HR')
 # print(len(data))
