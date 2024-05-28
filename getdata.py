@@ -4,6 +4,7 @@ import torch.nn.functional as F
 import os
 
 path = os.path.join('models\data\data.npz\data.npz')
+print(path)
 
 def get_data(x:int,s:str): #选定第几个数据进行 分为三段：每段60  x:{0,1,2}
     data = np.load(path,allow_pickle=True)
@@ -26,4 +27,5 @@ def get_data(x:int,s:str): #选定第几个数据进行 分为三段：每段60 
     else :
         return breath_phase[l:r]
 
-    
+# data = get_data(0,'HR')
+# print(len(data))
