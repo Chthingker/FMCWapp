@@ -2,6 +2,7 @@ import streamlit as st
 import torch
 from peocess import *
 import numpy as np
+import plotly.figure_factory as ff
 
 st.write(
     """
@@ -24,6 +25,12 @@ for data in GetFile(selected_file_num,'HR'):
     ls.append(data.detach().numpy())
 ls=np.array(ls)
 
+
+fig = ff.create_distplot(
+    ls
+)
+
+st.plotly_chart(fig,use_container_width=True)
 
 # st.write(option)
 

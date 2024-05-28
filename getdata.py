@@ -3,7 +3,7 @@ import numpy as np
 import torch.nn.functional as F
 import os
 
-path = os.path.join('models/data/data.npz')
+path = os.path.join('models/data/data.npz') #果然，部署是Linux，所以要用/而非\  --windows
 # print(path)
 
 def get_data(x:int,s:str): #选定第几个数据进行 分为三段：每段60  x:{0,1,2}
