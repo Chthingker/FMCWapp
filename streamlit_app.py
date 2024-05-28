@@ -24,8 +24,9 @@ ls=[]
 for data in GetFile(selected_file_num,'HR'):
     ls.append(data.detach().numpy())
 ls=np.array(ls)
+ls = ls.reshape(60).tolist()
 
-print(ls.shape)
+print (ls)
 
 
 fig = ff.create_distplot(
