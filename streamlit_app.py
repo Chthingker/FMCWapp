@@ -42,14 +42,6 @@ labels=['心率',]
 
 
 
-# fig = ff.create_distplot(
-#     x,labels
-# )
-
-# st.plotly_chart(fig,use_container_width=True)
-
-# st.write(option)
-
 
 chart_data = pd.DataFrame(np.array(x).T,columns=labels)
 st.area_chart(chart_data)
